@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Site educacional sobre radiação solar, aquecimento de piscina, efeito fotoelétrico e sensores." />
+  <title>Sol & Água — Radiação Solar e Aquecimento da Piscina</title>
+
+  <!-- Fonte acessível para dislexia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- VLibras (acessibilidade em Libras) -->
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Skip link para navegação por teclado -->
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Barra de Acessibilidade -->
+  <aside class="acessibilidade" aria-label="Ferramentas de acessibilidade">
+    <button id="btnContraste" aria-label="Ativar alto contraste" title="Alto contraste">🌓</button>
+    <button id="btnFonte" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+    <button id="btnDislexia" aria-label="Ativar fonte para dislexia" title="Fonte OpenDyslexic">🔤</button>
+    <button id="btnLeitura" aria-label="Ativar modo leitura" title="Modo leitura">📖</button>
+  </aside>
+
+  <!-- Cabeçalho -->
+  <header role="banner">
+    <div class="container header-content">
+      <h1 class="logo">☀️ Sol & 💧 Água</h1>
+      <nav aria-label="Menu principal">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
+        <ul id="menu-principal" class="menu">
+          <li><a href="#introducao">Introdução</a></li>
+          <li><a href="#fundamentos">Fundamentos</a></li>
+          <li><a href="#corpo-negro">Corpo Negro</a></li>
+          <li><a href="#fotoeletrico">Efeito Fotoelétrico</a></li>
+          <li><a href="#simulador">Simulador</a></li>
+          <li><a href="#sensores">Sensores</a></li>
+          <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="#mapa">Mapa do Site</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main id="conteudo" role="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="container">
+        <h2 id="titulo-hero">Como o Sol aquece a sua piscina?</h2>
+        <p class="subtitulo">Uma jornada interativa pelas ondas eletromagnéticas, pelo efeito fotoelétrico e pelos sensores que tornam a piscina mais eficiente e sustentável.</p>
+        <a href="#simulador" class="btn-cta">🚀 Experimentar o simulador</a>
+      </div>
+    </section>
+
+    <!-- INTRODUÇÃO -->
+    <section id="introducao" class="secao" aria-labelledby="titulo-intro">
+      <div class="container">
+        <h2 id="titulo-intro">🌊 O Desafio da Piscina</h2>
+        <p>Manter uma piscina aquecida é um desafio que envolve <strong>física, tecnologia e sustentabilidade</strong>. O Sol emite energia na forma de ondas eletromagnéticas — parte dela é absorvida pela água, mas outra parte é perdida durante a noite como radiação infravermelha.</p>
+        <p>Neste site você vai entender:</p>
+        <ul class="lista-destaque">
+          <li>Como a <strong>radiação solar</strong> aquece a água</li>
+          <li>Por que a piscina <strong>perde calor à noite</strong></li>
+          <li>Como o <strong>efeito fotoelétrico</strong> gera energia para bombas</li>
+          <li>Como <strong>sensores</strong> automatizam o controle de temperatura</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FUNDAMENTOS: Ondas Eletromagnéticas -->
+    <section id="fundamentos" class="secao secao-azul" aria-labelledby="titulo-fund">
+      <div class="container">
+        <h2 id="titulo-fund">📡 Ondas Eletromagnéticas</h2>
+        <p>A luz do Sol é composta por ondas eletromagnéticas de diferentes comprimentos de onda. Cada tipo interage de uma forma com a água da piscina.</p>
+
+        <div class="espectro" role="img" aria-label="Espectro eletromagnético simplificado">
+          <div class="faixa uv" title="Ultravioleta">UV</div>
+          <div class="faixa visivel" title="Luz visível">Visível</div>
+          <div class="faixa iv" title="Infravermelho">IV</div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>☀️ Ultravioleta (UV)</h3>
+            <p>Alta energia, mas pouca absorção pela água. Responsável por queimaduras e pela degradação de materiais.</p>
+          </article>
+          <article class="card">
+            <h3>🌈 Luz Visível</h3>
+            <p>Faixa entre 400 e 700 nm. É parcialmente absorvida pela água e pelas superfícies escuras do coletor solar.</p>
+          </article>
+          <article class="card">
+            <h3>🔥 Infravermelho (IV)</h3>
+            <p>Responsável pela sensação de calor. É a faixa mais absorvida pela água — e também a mais emitida por ela à noite.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORPO NEGRO -->
+    <section id="corpo-negro" class="secao" aria-labelledby="titulo-cn">
+      <div class="container">
+        <h2 id="titulo-cn">⚫ Radiação de Corpo Negro</h2>
+        <p>Um <strong>corpo negro</strong> é um objeto ideal que absorve toda a radiação que incide sobre ele. O coletor solar da piscina se comporta de forma parecida: suas superfícies escuras absorvem radiação visível e infravermelha, convertendo-a em calor.</p>
+
+        <div class="grafico-container">
+          <canvas id="graficoCorpoNegro" width="600" height="300" aria-label="Gráfico da distribuição espectral de um corpo negro em diferentes temperaturas"></canvas>
+          <p class="legenda">Curva de Planck: quanto mais quente o corpo, maior a energia emitida e menor o pico de comprimento de onda.</p>
+        </div>
+
+        <div class="comparativo">
+          <h3>🔎 Comparativo: Sol × Piscina</h3>
+          <table>
+            <caption>Temperatura e pico de emissão</caption>
+            <thead>
+              <tr><th>Objeto</th><th>Temperatura (K)</th><th>Pico (nm)</th><th>Faixa principal</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sol</td><td>5800</td><td>500</td><td>Visível</td></tr>
+              <tr><td>Piscina (dia)</td><td>300</td><td>9660</td><td>Infravermelho</td></tr>
+              <tr><td>Piscina (noite)</td><td>290</td><td>10000</td><td>Infravermelho longo</td></tr>
+            </tbody>
+          </table>
+          <p class="destaque">💡 É por isso que a piscina perde calor à noite: ela emite radiação infravermelha para o céu frio.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EFEITO FOTOELÉTRICO -->
+    <section id="fotoeletrico" class="secao secao-azul" aria-labelledby="titulo-foto">
+      <div class="container">
+        <h2 id="titulo-foto">⚡ Efeito Fotoelétrico</h2>
+        <p>Descrito por Einstein em 1905, o efeito fotoelétrico mostra que a luz se comporta como <strong>partículas (fótons)</strong>. Quando um fóton com energia suficiente atinge um material, ele ejeta elétrons — gerando corrente elétrica.</p>
+
+        <div class="simulador-fotoeletrico">
+          <h3>🔬 Simulador Interativo</h3>
+          <label for="comprimentoOnda">Comprimento de onda da luz (nm):
+            <input type="range" id="comprimentoOnda" min="200" max="800" value="400" aria-valuemin="200" aria-valuemax="800">
+            <span id="valorOnda">400</span> nm
+          </label>
+          <div id="resultadoFotoeletrico" class="resultado" aria-live="polite"></div>
+          <div class="animacao-fotoeletrica">
+            <div class="foton" id="foton"></div>
+            <div class="placa">Placa metálica</div>
+            <div class="eletron" id="eletron"></div>
+          </div>
+        </div>
+
+        <p class="destaque">💡 É esse princípio que permite aos <strong>painéis fotovoltaicos</strong> gerar eletricidade para alimentar bombas de calor da piscina — uma alternativa sustentável ao aquecimento apenas solar.</p>
+      </div>
+    </section>
+
+    <!-- SIMULADOR DA PISCINA -->
+    <section id="simulador" class="secao" aria-labelledby="titulo-sim">
+      <div class="container">
+        <h2 id="titulo-sim">🏊 Simulador: Aquecimento da Piscina</h2>
+        <p>Ajuste os parâmetros e veja como a temperatura da piscina muda ao longo do dia.</p>
+
+        <div class="simulador-piscina">
+          <div class="controles">
+            <label>Hora do dia: <input type="range" id="horaDia" min="0" max="24" step="0.5" value="12"> <span id="valorHora">12:00</span></label>
+            <label>Intensidade solar (%): <input type="range" id="intensidade" min="0" max="100" value="80"> <span id="valorIntensidade">80</span>%</label>
+            <label>Capa térmica: <input type="checkbox" id="capaTermica"> <span>Não</span></label>
+            <label>Coletor solar: <input type="checkbox" id="coletor"> <span>Não</span></label>
+          </div>
+
+          <div class="visualizacao">
+            <div class="piscina-visual">
+              <div class="agua" id="aguaPiscina">
+                <span id="tempPiscina" class="temp-display">25°C</span>
+              </div>
+              <div class="sol" id="solVisual">☀️</div>
+            </div>
+            <div class="info-simulador">
+              <p><strong>Ganho solar:</strong> <span id="ganhoSolar">0</span> °C/h</p>
+              <p><strong>Perda noturna:</strong> <span id="perdaNoturna">0</span> °C/h</p>
+              <p><strong>Saldo térmico:</strong> <span id="saldoTermico">0</span> °C/h</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SENSORES E ROBÓTICA -->
+    <section id="sensores" class="secao secao-azul" aria-labelledby="titulo-sensores">
+      <div class="container">
+        <h2 id="titulo-sensores">🤖 Sensores e Automação</h2>
+        <p>Um sistema automatizado usa <strong>sensores</strong> para monitorar a piscina em tempo real e tomar decisões inteligentes.</p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>🌡️ Sensor de Temperatura (DS18B20)</h3>
+            <p>Mede a temperatura da água com precisão de ±0,5°C. Impermeável, ideal para piscinas.</p>
+          </article>
+          <article class="card">
+            <h3>☀️ Sensor de Luminosidade (LDR)</h3>
+            <p>Detecta a intensidade da luz solar. Aciona o coletor apenas quando há radiação suficiente.</p>
+          </article>
+          <article class="card">
+            <h3>💧 Sensor de Nível (Ultrassônico HC-SR04)</h3>
+            <p>Controla o nível da água, evitando desperdício e garantindo eficiência do sistema.</p>
+          </article>
+          <article class="card">
+            <h3>🧠 Microcontrolador (Arduino/ESP32)</h3>
+            <p>Processa os dados dos sensores e aciona bombas, aquecedores e capas térmicas automáticas.</p>
+          </article>
+        </div>
+
+        <div class="fluxograma" aria-label="Fluxograma do sistema automatizado">
+          <div class="bloco">Sensores</div>
+          <div class="seta">→</div>
+          <div class="bloco">Arduino/ESP32</div>
+          <div class="seta">→</div>
+          <div class="bloco">Atuadores</div>
+          <div class="seta">→</div>
+          <div class="bloco">Piscina otimizada</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUSTENTABILIDADE -->
+    <section id="sustentabilidade" class="secao" aria-labelledby="titulo-sust">
+      <div class="container">
+        <h2 id="titulo-sust">🌱 Sustentabilidade e Impacto Social</h2>
+        <p>Aquecer a piscina com energia solar reduz a conta de luz, diminui a emissão de CO₂ e democratiza o acesso a tecnologias limpas.</p>
+
+        <div class="impacto">
+          <div class="stat">
+            <span class="numero" data-target="70">0</span><span>%</span>
+            <p>de economia na conta de energia</p>
+          </div>
+          <div class="stat">
+            <span class="numero" data-target="2">0</span><span>ton</span>
+            <p>de CO₂ evitados por ano</p>
+          </div>
+          <div class="stat">
+            <span class="numero" data-target="25">0</span><span>anos</span>
+            <p>de vida útil do sistema</p>
+          </div>
+        </div>
+
+        <p class="destaque">💡 Além da economia, o projeto promove <strong>inclusão digital</strong>: comunidades podem aprender a construir seus próprios sistemas de aquecimento solar com componentes acessíveis.</p>
+      </div>
+    </section>
+
+    <!-- MAPA DO SITE -->
+    <section id="mapa" class="secao secao-azul" aria-labelledby="titulo-mapa">
+      <div class="container">
+        <h2 id="titulo-mapa">🗺️ Mapa do Site</h2>
+        <nav aria-label="Mapa do site">
+          <ul class="mapa-lista">
+            <li><a href="#introducao">Introdução — O Desafio da Piscina</a></li>
+            <li><a href="#fundamentos">Fundamentos — Ondas Eletromagnéticas</a></li>
+            <li><a href="#corpo-negro">Corpo Negro — Radiação Térmica</a></li>
+            <li><a href="#fotoeletrico">Efeito Fotoelétrico — Energia Solar Fotovoltaica</a></li>
+            <li><a href="#simulador">Simulador Interativo</a></li>
+            <li><a href="#sensores">Sensores e Automação</a></li>
+            <li><a href="#sustentabilidade">Sustentabilidade e Impacto Social</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <div class="container">
+      <p>📚 Projeto Integrador CEP — 3º Trimestre</p>
+      <p>Desenvolvido com ♻️ sustentabilidade e ♿ acessibilidade</p>
+      <p>© 2026 — Sol & Água. Conteúdo educativo sob licença livre.</p>
+    </div>
+  </footer>
+
+  <!-- Widget VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
